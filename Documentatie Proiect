@@ -1,0 +1,25 @@
+Documentatie proiect final
+Proiectul este creat utilizand design pattern-ul Page Object model.
+Ca framework am folosit Selenium WebDriver
+Testele sunt rulate folosind Maven.
+Fiecare test case o sa deschida o instanta de Browser iar dupa rularea fiecarui test acea
+instanta o sa fie inchisa. Rularea o sa fie in full screen, setarea este facuta la linia 31 in clasa
+BasePage
+Fisierul pom.xml contine dependintele Maven pentru intregul proiect, dependinte pentru
+Selenium, Chrome Driver, TestNG.
+Proiectul este format din 2 pachete (pages si testCases):
+● pages contine locatorii din pagini, cum ar fi locatorii din HomePage si LoginPage
+○ In interiorul pages se gaseste si clasa BasePage care este responsabila cu
+configurari si prerechizite necesare rularii testelor
+● test contine test case-urile pentru elemente din cele 2 clase din pachetul de
+pages.
+Clasa BasePage contine de asemenea configurarile pentru browse inauntrul hook-ului
+@BeforeMethod
+Validarile contin si happy flows dar si negative flows (unde am verificat prezenta unor mesaje de
+eroare)
+Pentru a rula testele folosim comanda test care poate fi gasita accesand butonul ‘m’ din partea
+dreapta sus, sub Lifecycle. Daca comanda test da eroare este recomandat sa rulam comenzile
+clean, validate, complie, test in ordine.
+Dupa ce testele s-au rulat, generam un raport folosind comenzile allure:report si allure:serve
+aflate sub Plugins/allure. Comanda allure:report va genera raportul pe baza testelor rulate iar
+comanda allure:serve va afisa raportul.
